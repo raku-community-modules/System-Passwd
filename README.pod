@@ -1,4 +1,4 @@
-=head1 NAME
+=head2 NAME
 
 System::Passwd - easily search for Linux system users
 
