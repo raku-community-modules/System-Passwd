@@ -1,0 +1,9 @@
+{
+    "name" : "System::Passwd",
+    "version" : "0.01",
+    "description" : "easily search for Linux system users",
+    "author" : "David Farrell",
+    "depends" : [ ],
+    "source-url" : "git://github.com/sillymoose/System-Passwd.git"
+}
+
