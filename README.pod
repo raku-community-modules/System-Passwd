@@ -1,12 +1,10 @@
-=begin pod
-
 =head1 NAME
 
 System::Passwd - easily search for Linux system users
 
 =head2 DESCRIPTION
 
-L<System::Passwd> is a Perl 6 distribution for searching the C</etc/passwd> file. It provides subroutines to search for a user by uid, username or their full name.
+L<System::Passwd> is a Perl 6 distribution for searching the C</etc/passwd> file. It provides subroutines to search for a System::Passwd::User user by uid, username or full name.
 
 =head2 SYNOPSIS
 
@@ -35,4 +33,4 @@ FreeBSD - see LICENSE
 
 David Farrell
 
-=end pod
+=cut
