@@ -7,9 +7,12 @@ module System::Passwd
 
     given $*DISTRO.Str
     {
-        when m:i/linux/  { $user_class = System::Passwd::User::Linux  }
-        when m:i/macosx/ { $user_class = System::Passwd::User::MacOSX }
-        default { die 'This module is not compatible with the operating system {$*DISTRO.Str}' }
+        when m:i/linux/   { $user_class = System::Passwd::User::Linux  }
+        when m:i/openbsd/ { $user_class = System::Passwd::User::Linux  }
+        when m:i/netbsd/  { $user_class = System::Passwd::User::Linux  }
+        when m:i/freebsd/ { $user_class = System::Passwd::User::Linux  }
+        when m:i/macosx/  { $user_class = System::Passwd::User::MacOSX }
+        default { die "This module is not compatible with the operating system {$*DISTRO.Str}" }
     }
 
     # build users array
