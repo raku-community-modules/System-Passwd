@@ -2,7 +2,7 @@ use System::Passwd::User;
 
 module System::Passwd
 {
-    die 'This module is only compatible with Linux' if $*DISTRO.Str !~~ m:i/linux/;
+    die 'This module is only compatible with Linux' if $*DISTRO.Str !~~ m:i/[linux|macosx]/;
 
     # build users array
     my $password_file = open '/etc/passwd', :r;
@@ -10,6 +10,7 @@ module System::Passwd
 
     for $password_file.lines
     {
+        next if .substr(0, 1) ~~ '#'; # skip comments
         my @cols = .split(':');
         my $user = System::Passwd::User.new(
             username    => @cols[0],
