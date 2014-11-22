@@ -1,8 +1,16 @@
-use System::Passwd::User;
+use System::Passwd::User::MacOSX;
+use System::Passwd::User::Linux;
 
 module System::Passwd
 {
-    die 'This module is only compatible with Linux' if $*DISTRO.Str !~~ m:i/[linux|macosx]/;
+    my $user_class;
+
+    given $*DISTRO.Str
+    {
+        when m:i/linux/  { $user_class = System::Passwd::User::Linux  }
+        when m:i/macosx/ { $user_class = System::Passwd::User::MacOSX }
+        default { die 'This module is not compatible with the operating system {$*DISTRO.Str}' }
+    }
 
     # build users array
     my $password_file = open '/etc/passwd', :r;
@@ -11,16 +19,7 @@ module System::Passwd
     for $password_file.lines
     {
         next if .substr(0, 1) ~~ '#'; # skip comments
-        my @cols = .split(':');
-        my $user = System::Passwd::User.new(
-            username    => @cols[0],
-            password    => @cols[1],
-            uid         => @cols[2],
-            gid         => @cols[3],
-            fullname    => @cols[4],
-            home_dir    => @cols[5],
-            login_shell => @cols[6],
-        );
+        my $user = $user_class.new($_);
         @users.push($user);
     }
 

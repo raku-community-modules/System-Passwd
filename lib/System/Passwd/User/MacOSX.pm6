@@ -1,6 +1,6 @@
 use System::Passwd::User;
 
-class System::Passwd::User::Linux is System::Passwd::User
+class System::Passwd::User::MacOSX is System::Passwd::User
 {
     method new ($line!)
     {

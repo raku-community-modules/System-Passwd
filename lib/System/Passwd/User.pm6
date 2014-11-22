@@ -1,4 +1,4 @@
-our class System::Passwd::User
+class System::Passwd::User
 {
     has $.username;
     has $.password;
