@@ -1,6 +1,6 @@
 =head2 NAME
 
-System::Passwd - easily search for Linux system users
+System::Passwd - easily search for system users
 
 =head2 DESCRIPTION
 
