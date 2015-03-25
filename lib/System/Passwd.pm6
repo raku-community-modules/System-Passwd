@@ -45,11 +45,11 @@ module System::Passwd
 
 =head1 NAME
 
-System::Passwd - easily search for Linux system users
+System::Passwd - easily search for system users on Unix based systems
 
 =head2 DESCRIPTION
 
-L<System::Passwd> is a Perl 6 distribution for searching the C</etc/passwd> file. It provides subroutines to search for a System::Passwd::User user by uid, username or full name.
+L<System::Passwd> is a Perl 6 distribution for searching the C</etc/passwd> file. It provides subroutines to search for a System::Passwd::User user by uid, username or full name. System::Passwd should work on Linux, Unix, FreeBSD, NetBSD, OpenBSD and OSX (although not all OSX users are stored in C</etc/passwd>).
 
 =head2 SYNOPSIS
 
