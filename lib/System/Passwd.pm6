@@ -5,7 +5,7 @@ module System::Passwd
 {
     my $user_class;
 
-    given $*DISTRO.Str
+    given [$*DISTRO.Str|$*KERNEL.Str]
     {
         when m:i/linux/   { $user_class = System::Passwd::User::Linux  }
         when m:i/openbsd/ { $user_class = System::Passwd::User::Linux  }
