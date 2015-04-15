@@ -8,5 +8,5 @@
         "System::Passwd" : "lib/System/Passwd.pm6",
         "System::Passwd::User" : "lib/System/Passwd/User.pm6"
     },
-    "source-url" : "git://github.com/sillymoose/System-Passwd.git"
+    "source-url" : "git://github.com/dnmfarrell/System-Passwd.git"
 }
