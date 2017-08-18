@@ -9,13 +9,13 @@ module System::Passwd
     my sub populate_users() {
         if !$loaded_users {
             my $user_class;
-            given [$*DISTRO.Str|$*KERNEL.Str]
+            given $*DISTRO.Str|$*KERNEL.Str
             {
-                when m:i/linux/   { $user_class = System::Passwd::User }
-                when m:i/openbsd/ { $user_class = System::Passwd::User }
-                when m:i/netbsd/  { $user_class = System::Passwd::User }
-                when m:i/freebsd/ { $user_class = System::Passwd::User }
-                when m:i/macosx/  { $user_class = System::Passwd::User }
+                when rx:i/linux/   { $user_class = System::Passwd::User }
+                when rx:i/openbsd/ { $user_class = System::Passwd::User }
+                when rx:i/netbsd/  { $user_class = System::Passwd::User }
+                when rx:i/freebsd/ { $user_class = System::Passwd::User }
+                when rx:i/macosx/  { $user_class = System::Passwd::User }
                 default { die "This module is not compatible with the operating system {$*DISTRO.Str}" }
             }
 
