@@ -5,8 +5,16 @@ class System::Passwd::User
     has $.uid;
     has $.gid;
     has $.fullname;
-    has $.home_directory;
-    has $.login_shell;
+    has $.home-directory;
+    has $.login-shell;
+
+    method home_directory() is DEPRECATED('home-directory') {
+        $!home-directory
+    }
+
+    method login_shell() is DEPRECATED('login-shell') {
+        $!login-shell
+    }
 
     method new ($line!)
     {
@@ -16,9 +24,9 @@ class System::Passwd::User
         my $uid             = @line[2];
         my $gid             = @line[3];
         my $fullname        = @line[4];
-        my $home_directory  = @line[5];
-        my $login_shell     = @line[6];
+        my $home-directory  = @line[5];
+        my $login-shell     = @line[6];
 
-        return self.bless(:$username, :$password, :$uid, :$gid, :$fullname, :$home_directory, :$login_shell);
+        return self.bless(:$username, :$password, :$uid, :$gid, :$fullname, :$home-directory, :$login-shell);
     }
 }

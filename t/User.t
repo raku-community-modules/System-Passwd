@@ -1,6 +1,5 @@
 use v6;
 use Test;
-use lib 'lib';
 use System::Passwd::User;
 
 plan 24;
@@ -18,7 +17,7 @@ for @lines -> @line
     is $user.uid,           @line[3], "uid is {@line[3]}";
     is $user.gid,           @line[4], "gid is {@line[4]}";
     is $user.fullname,      @line[5], "fullname is {@line[5]}";
-    is $user.home_directory,@line[6], "home_dir is {@line[6]}";
-    is $user.login_shell,   @line[7], "login_shell is {@line[7]}";
+    is $user.home-directory,@line[6], "home-directory is {@line[6]}";
+    is $user.login-shell,   @line[7], "login-shell is {@line[7]}";
 }
 
