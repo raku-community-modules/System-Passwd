@@ -1,5 +1,7 @@
 Revision history for System-Passwd
 
 {{$NEXT}}
+
+0.1  2022-05-28T12:09:42+02:00
     - Removed deprecated subs / methods (3+ years is enough deprecation)
     - First version in the zef ecosystem.

@@ -20,7 +20,9 @@
   "resources": [
   ],
   "source-url": "git://github.com/raku-community-modules/System-Passwd.git",
-  "tags": [ "PASSWD", "USER"
+  "tags": [
+    "PASSWD",
+    "USER"
   ],
   "test-depends": [
   ],
