@@ -14,6 +14,7 @@
   "perl": "6.*",
   "provides": {
     "System::Passwd": "lib/System/Passwd.rakumod"
+    "System::Passwd::User": "lib/System/Passwd.rakumod"
   },
   "raku": "6.*",
   "resources": [
