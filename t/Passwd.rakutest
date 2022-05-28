@@ -1,4 +1,3 @@
-use v6;
 use Test;
 
 use System::Passwd;
@@ -22,3 +21,5 @@ ok my $user_3 = get-user-by-fullname($fullname), 'get root user by fullname';
 is $user_3.username, 'root', 'root user returned';
 is $user_3.uid, 0, 'uid is zero';
 is $user_3.gid, 0, 'gid is zero';
+
+# vim: expandtab shiftwidth=4

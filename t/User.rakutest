@@ -1,16 +1,15 @@
-use v6;
 use Test;
 use System::Passwd::User;
 
 plan 24;
+
 my @lines =
     [<root:x:0:0:root:/root:/bin/bash root x 0 0 root /root /bin/bash>],
     [<bin:x:1:1:bin:/bin:/sbin/nologin bin x 1 1 bin /bin /sbin/nologin>],
     ['nginx:x:992:989:Nginx web server:/var/lib/nginx:/sbin/nologin',
      'nginx', 'x', 992, 989, 'Nginx web server', '/var/lib/nginx', '/sbin/nologin'];
 
-for @lines -> @line
-{
+for @lines -> @line {
     ok my $user = System::Passwd::User.new(@line[0]), "Constructing {@line[0]}";
     is $user.username,      @line[1], "username is {@line[1]}";
     is $user.password,      @line[2], "password is {@line[2]}";
@@ -21,3 +20,4 @@ for @lines -> @line
     is $user.login-shell,   @line[7], "login-shell is {@line[7]}";
 }
 
+# vim: expandtab shiftwidth=4

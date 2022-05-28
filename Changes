@@ -1,0 +1,5 @@
+Revision history for System-Passwd
+
+{{$NEXT}}
+    - Removed deprecated subs / methods (3+ years is enough deprecation)
+    - First version in the zef ecosystem.

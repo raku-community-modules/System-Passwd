@@ -1,15 +1,27 @@
 {
-    "perl" : "6.*",
-    "raku" : "6.*",
-    "name" : "System::Passwd",
-    "version" : "0.05",
-    "description" : "Easily search for system users in Unix-based systems",
-    "authors" : [ "David Farrell", "Raku community" ],
-    "depends" : [ ],
-    "provides" : {
-        "System::Passwd" : "lib/System/Passwd.pm6",
-        "System::Passwd::User" : "lib/System/Passwd/User.pm6"
-    },
-    "source-url" : "git://github.com/raku-community-modules/System-Passwd.git",
-    "meta-version" : 0
+  "auth": "zef:raku-community-modules",
+  "authors": [
+    "David Farrell"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "easily search for system users on Unix based systems",
+  "license": "NOASSERTION",
+  "meta-version": 0,
+  "name": "System::Passwd",
+  "perl": "6.*",
+  "provides": {
+    "System::Passwd": "lib/System/Passwd.rakumod"
+  },
+  "raku": "6.*",
+  "resources": [
+  ],
+  "source-url": "git://github.com/raku-community-modules/System-Passwd.git",
+  "tags": [ "PASSWD", "USER"
+  ],
+  "test-depends": [
+  ],
+  "version": "0.1"
 }
