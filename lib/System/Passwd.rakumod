@@ -34,7 +34,7 @@ my sub users() {
             when rx:i/openbsd/ { $user-class = System::Passwd::User }
             when rx:i/netbsd/  { $user-class = System::Passwd::User }
             when rx:i/freebsd/ { $user-class = System::Passwd::User }
-            when rx:i/macosx/  { $user-class = System::Passwd::User }
+            when rx:i/macos/   { $user-class = System::Passwd::User }
             default {
                 die "This module is not compatible with the operating system $*DISTRO.Str()"
             }
